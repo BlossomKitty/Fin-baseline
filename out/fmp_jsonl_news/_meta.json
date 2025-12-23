@@ -1,0 +1,25 @@
+{
+  "date_generated": "2025-12-23",
+  "source": "Financial Modeling Prep (FMP)",
+  "range": {
+    "start": "2021-01-01",
+    "end": "2025-12-23"
+  },
+  "symbols_file": "D:\\FinML\\symbols_2025-12-20.txt",
+  "includes": [
+    "income_statement_(annual/quarter)",
+    "balance_sheet_(annual/quarter)",
+    "cash_flow_(annual/quarter)",
+    "ratios_(annual/quarter)",
+    "key_metrics_(annual/quarter)",
+    "ratios_ttm",
+    "key_metrics_ttm",
+    "enterprise_values",
+    "analyst_estimates_annual",
+    "sec_filings",
+    "press_releases (optional)",
+    "stock_news (optional)",
+    "financial-reports-json FY/Q1-Q4 (optional)"
+  ],
+  "security_note": "This downloader redacts apikey in any logged error/url/text written to jsonl."
+}

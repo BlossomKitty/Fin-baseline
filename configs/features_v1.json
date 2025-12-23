@@ -1,0 +1,138 @@
+{
+  "calendar": {
+    "method": "bday",
+    "from_bars_csv": null,
+    "timezone": "America/New_York"
+  },
+  "availability": {
+    "date_field_preference": ["filingDate", "acceptedDate", "publishedDate", "date"],
+    "default_lag_days": 1,
+    "lag_days_by_type": {
+      "income_statement_quarter": 45,
+      "balance_sheet_quarter": 45,
+      "cash_flow_quarter": 45,
+      "ratios_quarter": 45,
+      "key_metrics_quarter": 45,
+
+      "income_statement_annual": 90,
+      "balance_sheet_annual": 90,
+      "cash_flow_annual": 90,
+      "ratios_annual": 90,
+      "key_metrics_annual": 90,
+
+      "enterprise_values": 1,
+      "ratios_ttm": 1,
+      "key_metrics_ttm": 1,
+      "analyst_estimates_annual": 1,
+
+      "sec_filings": 0,
+      "stock_news": 0,
+      "press_releases": 0
+    }
+  },
+  "features": [
+    {
+      "type": "income_statement_quarter",
+      "prefix": "is_q_",
+      "fields": ["revenue", "grossProfit", "operatingIncome", "netIncome", "ebitda", "eps"]
+    },
+    {
+      "type": "income_statement_annual",
+      "prefix": "is_a_",
+      "fields": ["revenue", "grossProfit", "operatingIncome", "netIncome", "ebitda", "eps"]
+    },
+
+    {
+      "type": "balance_sheet_quarter",
+      "prefix": "bs_q_",
+      "fields": ["totalAssets", "totalLiabilities", "totalStockholdersEquity", "cashAndCashEquivalents", "totalDebt"]
+    },
+    {
+      "type": "balance_sheet_annual",
+      "prefix": "bs_a_",
+      "fields": ["totalAssets", "totalLiabilities", "totalStockholdersEquity", "cashAndCashEquivalents", "totalDebt"]
+    },
+
+    {
+      "type": "cash_flow_quarter",
+      "prefix": "cf_q_",
+      "fields": ["operatingCashFlow", "freeCashFlow", "capitalExpenditure"]
+    },
+    {
+      "type": "cash_flow_annual",
+      "prefix": "cf_a_",
+      "fields": ["operatingCashFlow", "freeCashFlow", "capitalExpenditure"]
+    },
+
+    {
+      "type": "ratios_quarter",
+      "prefix": "r_q_",
+      "fields": [
+        "priceToEarningsRatio",
+        "priceToBookRatio",
+        "priceToSalesRatio",
+        "currentRatio",
+        "debtEquityRatio",
+        "returnOnEquity",
+        "returnOnAssets",
+        "grossProfitMargin",
+        "netProfitMargin"
+      ]
+    },
+    {
+      "type": "ratios_annual",
+      "prefix": "r_a_",
+      "fields": [
+        "priceToEarningsRatio",
+        "priceToBookRatio",
+        "priceToSalesRatio",
+        "currentRatio",
+        "debtEquityRatio",
+        "returnOnEquity",
+        "returnOnAssets",
+        "grossProfitMargin",
+        "netProfitMargin"
+      ]
+    },
+
+    {
+      "type": "key_metrics_quarter",
+      "prefix": "km_q_",
+      "fields": ["marketCap", "enterpriseValue", "freeCashFlowPerShare", "netDebtToEBITDA", "capexToRevenue"]
+    },
+    {
+      "type": "key_metrics_annual",
+      "prefix": "km_a_",
+      "fields": ["marketCap", "enterpriseValue", "freeCashFlowPerShare", "netDebtToEBITDA", "capexToRevenue"]
+    },
+
+    {
+      "type": "enterprise_values",
+      "prefix": "ev_",
+      "fields": ["marketCapitalization", "enterpriseValue", "stockPrice", "numberOfShares", "minusCashAndCashEquivalents", "addTotalDebt"]
+    },
+
+    {
+      "type": "analyst_estimates_annual",
+      "prefix": "ae_a_",
+      "fields": ["estimatedRevenueAvg", "estimatedEpsAvg"]
+    },
+
+    {
+      "type": "sec_filings",
+      "events": [
+        {"name": "filing_count", "mode": "count_all"},
+        {"name": "filing_10k", "mode": "count_by_field_equals", "field": "type", "value": "10-K"},
+        {"name": "filing_10q", "mode": "count_by_field_equals", "field": "type", "value": "10-Q"},
+        {"name": "filing_8k", "mode": "count_by_field_equals", "field": "type", "value": "8-K"}
+      ]
+    },
+
+    {
+      "type": "stock_news",
+      "events": [
+        {"name": "news_count", "mode": "count_all"}
+      ]
+    }
+  ]
+}

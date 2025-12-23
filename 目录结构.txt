@@ -1,0 +1,25 @@
+fmp_fundamentals_downloader/
+  requirements.txt
+  configs/
+    features_v1.json
+  scripts/
+    download_fmp_fundamentals.py
+    fmp_client.py
+    symbol_utils.py
+    build_features_daily.py
+  features/
+    jsonl_loader.py
+    align.py
+    compute.py
+
+conda activate finml
+# PowerShell 示例
+$env:FMP_API_KEY=""
+
+python scripts/build_features_daily.py `
+  --symbols-file symbols_2025-12-20.txt `
+  --jsonl-dir out/fmp_jsonl `
+  --out-dir out/features_daily `
+  --start 2021-01-01 `
+  --merge-all
+
